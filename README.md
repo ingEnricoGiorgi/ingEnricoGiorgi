@@ -1,4 +1,4 @@
-# Enrico Giorgi
+# 💻 Enrico Giorgi
 
 Junior Backend Developer  
 PHP, Laravel, Magento  
