@@ -16,7 +16,7 @@ PHP, Laravel, Magento
 
 ## Production project
 
-### Website in production  
+### Website Wordpress in production  
 https://www.avvalessandragiorgi.it/
 
 - Development and management of a live website  
