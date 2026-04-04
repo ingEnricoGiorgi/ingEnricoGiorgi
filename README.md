@@ -36,9 +36,12 @@ https://www.avvalessandragiorgi.it/
 - REST API  
 - JWT authentication  
 
-### Magento Custom
-- Custom modules development  
-- Pricing rules and business logic  
+### Magento eCommerce platform  
+https://reflexmania.it/
+
+- Contributed to development and maintenance of a Magento-based eCommerce platform  
+- Worked on backend customizations and configuration  
+- Debugging and issue resolution in a production environment    
 
 ---
 
