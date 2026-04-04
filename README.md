@@ -47,7 +47,12 @@ https://reflexmania.it/
 
 ## Tech stack
 
-PHP • Laravel • Magento • MySQL • Docker • JavaScript  
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php)
+![Laravel](https://img.shields.io/badge/Laravel-red?style=for-the-badge&logo=laravel)
+![Magento](https://img.shields.io/badge/Magento-orange?style=for-the-badge&logo=magento)
+![MySQL](https://img.shields.io/badge/MySQL-blue?style=for-the-badge&logo=mysql)
+![Docker](https://img.shields.io/badge/Docker-blue?style=for-the-badge&logo=docker)
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript)
 
 ---
 
