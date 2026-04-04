@@ -54,3 +54,7 @@ PHP • Laravel • Magento • MySQL • Docker • JavaScript
 ## Contact
 
 LinkedIn: https://www.linkedin.com/in/enrico-giorgi-1b20bb184/
+
+## Contributions
+
+![snake](https://raw.githubusercontent.com/ingEnricoGiorgi/ingEnricoGiorgi/output/github-contribution-grid-snake.svg)
