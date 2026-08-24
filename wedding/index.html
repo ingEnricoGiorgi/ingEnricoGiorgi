@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Matrimonio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      background: linear-gradient(135deg, #fffaf7, #f2e4df);
+
+      font-family: Georgia, "Times New Roman", serif;
+      color: #2b2222;
+      padding: 25px;
+    }
+
+    .contenitore {
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    h1 {
+      font-size: clamp(60px, 11vw, 140px);
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .data {
+      font-size: clamp(25px, 4vw, 50px);
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 60px;
+    }
+
+    .mancano {
+      font-size: clamp(20px, 3vw, 35px);
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .blocco {
+      min-width: 140px;
+    }
+
+    .numero {
+      font-size: clamp(55px, 9vw, 110px);
+      font-weight: bold;
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .testo {
+      margin-top: 12px;
+      font-size: 16px;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .separatore {
+      font-size: clamp(45px, 7vw, 90px);
+      font-style: italic;
+      transform: translateY(-12px);
+    }
+
+    #finale {
+      display: none;
+      font-size: clamp(35px, 7vw, 80px);
+      font-style: italic;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 700px) {
+
+      h1 {
+        letter-spacing: 3px;
+      }
+
+      .countdown {
+        gap: 12px;
+      }
+
+      .blocco {
+        min-width: 100px;
+      }
+
+      .separatore {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="contenitore">
+
+    <h1>Matrimonio</h1>
+
+    <div class="data">
+      15 Settembre 2026
+    </div>
+
+    <div class="mancano">
+      Alla cerimonia mancano
+    </div>
+
+    <div class="countdown" id="countdown">
+
+      <div class="blocco">
+        <div class="numero" id="giorni">00</div>
+        <div class="testo">Giorni</div>
+      </div>
+
+      <div class="separatore">:</div>
+
+      <div class="blocco">
+        <div class="numero" id="ore">00</div>
+        <div class="testo">Ore</div>
+      </div>
+
+      <div class="separatore">:</div>
+
+      <div class="blocco">
+        <div class="numero" id="minuti">00</div>
+        <div class="testo">Minuti</div>
+      </div>
+
+      <div class="separatore">:</div>
+
+      <div class="blocco">
+        <div class="numero" id="secondi">00</div>
+        <div class="testo">Secondi</div>
+      </div>
+
+    </div>
+
+    <div id="finale">
+      È arrivato il grande giorno
+    </div>
+
+  </main>
+
+
+  <script>
+
+    // 15 settembre 2026 ore 11:00
+    // +02:00 = ora italiana nel periodo estivo
+    const dataMatrimonio = new Date("2026-09-15T11:00:00+02:00").getTime();
+
+    const giorni = document.getElementById("giorni");
+    const ore = document.getElementById("ore");
+    const minuti = document.getElementById("minuti");
+    const secondi = document.getElementById("secondi");
+
+    const countdown = document.getElementById("countdown");
+    const finale = document.getElementById("finale");
+
+
+    function aggiornaCountdown() {
+
+      const adesso = new Date().getTime();
+
+      const distanza = dataMatrimonio - adesso;
+
+
+      if (distanza <= 0) {
+
+        countdown.style.display = "none";
+        finale.style.display = "block";
+
+        clearInterval(timer);
+
+        return;
+      }
+
+
+      const giorniRimanenti = Math.floor(
+        distanza / (1000 * 60 * 60 * 24)
+      );
+
+      const oreRimanenti = Math.floor(
+        (distanza % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+      );
+
+      const minutiRimanenti = Math.floor(
+        (distanza % (1000 * 60 * 60)) /
+        (1000 * 60)
+      );
+
+      const secondiRimanenti = Math.floor(
+        (distanza % (1000 * 60)) /
+        1000
+      );
+
+
+      giorni.textContent = String(giorniRimanenti).padStart(2, "0");
+
+      ore.textContent = String(oreRimanenti).padStart(2, "0");
+
+      minuti.textContent = String(minutiRimanenti).padStart(2, "0");
+
+      secondi.textContent = String(secondiRimanenti).padStart(2, "0");
+
+    }
+
+
+    aggiornaCountdown();
+
+    const timer = setInterval(aggiornaCountdown, 1000);
+
+  </script>
+
+</body>
+</html>
